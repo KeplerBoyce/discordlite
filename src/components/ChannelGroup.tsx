@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Channel } from "../util/types";
+import { ChannelType } from "../util/types";
 
-export default function ChannelGroup(props: {name: string, channels: Channel[]}) {
+export default function ChannelGroup(props: {name: string, channels: ChannelType[]}) {
     const {name, channels} = props;
     const [open, setOpen] = useState(false);
 

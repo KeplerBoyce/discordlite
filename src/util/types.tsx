@@ -1,2 +1,2 @@
-export type User = {id: string, name: string};
-export type Channel = {id: string, name: string};
+export type UserType = {id: string, name: string, status: string};
+export type ChannelType = {id: string, name: string};

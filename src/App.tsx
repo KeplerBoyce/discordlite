@@ -13,7 +13,11 @@ export default function App() {
                 <Header />
                 <div className="flex h-full">
                     <Feed />
-                    <UserBar />
+                    <UserBar users={[
+                        {id: "0", name: "keplerboyce", status: "what is poppin"},
+                        {id: "0", name: "keplerboyce", status: "what is poppin"},
+                        {id: "0", name: "keplerboyce", status: "what is poppin"}
+                    ]} />
                 </div>
             </div>
         </div>

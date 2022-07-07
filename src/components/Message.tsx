@@ -7,7 +7,7 @@ export default function Message(props: {user: User, msg: string, timestamp: stri
         <div className="flex flex-col">
             <div className="flex gap-2 items-end">
                 <p className="text-white">{user.name}</p>
-                <p className="text-sm text-gray-400">{timestamp}</p>
+                <p className="pb-0.5 text-xs text-gray-400">{timestamp}</p>
             </div>
             <p className="font-light text-white">{msg}</p>
         </div>

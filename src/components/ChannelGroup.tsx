@@ -1,8 +1,9 @@
 import { useState } from "react";
 import { ChannelType } from "../util/types";
+import Channel from "./Channel";
 
-export default function ChannelGroup(props: {name: string, channels: ChannelType[]}) {
-    const {name, channels} = props;
+export default function ChannelGroup(props: {name: string, channels: ChannelType[], chosenChannel: ChannelType, callback: (channel: ChannelType) => void}) {
+    const {name, channels, chosenChannel, callback} = props;
     const [open, setOpen] = useState(false);
 
     return (
@@ -17,10 +18,7 @@ export default function ChannelGroup(props: {name: string, channels: ChannelType
             {open && (
                 <div className="flex flex-col">
                     {channels.map(c =>
-                        <button className="flex items-center gap-1.5 text-left text-gray-400 px-2 py-1 hover:bg-light hover:text-gray-300 rounded-lg w-full">
-                            <p className="italic">#</p>
-                            <p>{c.name}</p>
-                        </button>
+                        <Channel channel={{...c}} chosenChannel={chosenChannel} callback={callback} />
                     )}
                 </div>
             )}

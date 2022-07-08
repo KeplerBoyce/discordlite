@@ -1,20 +1,24 @@
+import { useState } from "react";
 import ChannelBar from "./components/ChannelBar";
 import Feed from "./components/Feed";
 import Header from "./components/Header";
 import InputBar from "./components/InputBar";
 import ServerBar from "./components/ServerBar";
 import UserBar from "./components/UserBar";
+import { ChannelType } from "./util/types";
 
 export default function App() {
+    const [chosenChannel, setChosenChannel] = useState({} as ChannelType);
+
     return (
         <div className="w-full h-[100vh] bg-light flex">
             <ServerBar />
-            <ChannelBar />
+            <ChannelBar chosenChannel={chosenChannel} callback={channel => setChosenChannel(channel)} />
             <div className="flex flex-col h-screen w-full">
-                <Header />
-                <div className="flex gap-1 overflow-hidden justify-end">
-                    <div className="flex flex-col">
-                        <Feed />
+                <Header chosenChannel={chosenChannel} />
+                <div className="flex gap-1 overflow-hidden h-full">
+                    <div className="flex flex-col grow">
+                        <Feed chosenChannel={chosenChannel} />
                         <InputBar />
                     </div>
                     <UserBar users={[

@@ -1,10 +1,10 @@
-import { UserType } from "../util/types"
+import { MessageType } from "../util/types"
 
-export default function Message(props: {user: UserType, msg: string, timestamp: string}) {
+export default function Message(props: MessageType) {
     const {user, msg, timestamp} = props
 
     return (
-        <div className="flex flex-col hover:bg-medium-light px-2">
+        <div className="flex flex-col hover:bg-medium-light px-4">
             <div className="flex gap-2 items-end">
                 <button className="text-white hover:underline">{user.name}</button>
                 <p className="pb-0.5 text-xs text-gray-400">{timestamp}</p>
